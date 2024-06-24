@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Menu</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<style>
+body {
+    background-color: #b39eb5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; /* Added */
+}
+
+.product-item {
+    width: 300px; 
+    height: 240px; 
+    margin-top: 40px; 
+    margin-right: 20px;
+    border: 5px solid #0d0d0d;
+    padding: 10px;
+    display: inline-block; 
+    vertical-align: top; 
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff; 
+    padding: 10px 20px; 
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.product-item img {
+    width: 2.5in;
+    height: 1.2in;
+    margin-right: 100px;
+}
+
+.product-info {
+    flex: 1; 
+}
+
+.product-info h3, .product-info p {
+    margin-top: 4px; /* Updated */
+    font-size: 20px; 
+}
+
+.product-info p {
+    margin-bottom: 7px; 
+}
+
+.product-info button {
+    background-color: #010f19;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.icon-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.cart-icon, .receipt-icon {
+    font-size: 25px;
+    cursor: pointer;
+    margin-left: 10px; /* Updated */
+}
+
+.cart-icon {
+    color: #000000;
+}
+
+.receipt-icon {
+    color: #483d3d;
+}
+
+.cart {
+    display: none;
+    border: 2px solid black;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    background-color: #dcd0ff;
+    z-index: 1000;
+}
+
+.receipt {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    background-color: #dcd0ff;
+    padding: 20px;
+    border: 2px solid black;
+    z-index: 1000;
+}
+
+.back-button {
+    float: left;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.quantity-display {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #dcd0ff;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #dcd0ff;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="container">
+        <!-- Other content here -->
+    
+        <!-- Back to Home button -->
+        <a href="Index.html" class="button">Back to Home</a>
+    </div>    
+
+    <div id="products">
+        <div class="product-item">
+            <div class="product-info">
+                <h3>Milk Fish With Tomato</h3>
+                <p>Price: ₱350.00</p>
+                <button onclick="addToCart('Milk Fish With Tomato', 350)">Add to Cart</button>
+            </div>
+            <img src="ulam1.jpg" alt="Product Image">
+        </div>
+        <div class="product-item">
+            <div class="product-info">
+                <h3>Special nuggets</h3>
+                <p>Price: ₱250.00</p>
+                <button onclick="addToCart('Special nuggets', 250)">Add to Cart</button>
+            </div>
+            <img src="ulam2.jpg" alt="Product Image">
+        </div>
+    </div>
+    <div class="product-item">
+        <div class="product-info">
+            <h3>Lechon Kawali</h3>
+            <p>Price: ₱350.00</p>
+            <button onclick="addToCart('Lechon Kawali', 350)">Add to Cart</button>
+        </div>
+        <img src="ulam3.jpg" alt="Product Image">
+    </div>
+    <div class="product-item">
+        <div class="product-info">
+            <h3>Special Steak</h3>
+            <p>Price: ₱1000.00</p>
+            <button onclick="addToCart('Special Steak', 1000)">Add to Cart</button>
+        </div>
+        <img src="ulam4.jpg" alt="Product Image">
+    </div>
+    <div class="product-item">
+        <div class="product-info">
+            <h3>Garlic Mushroom Cooked in Creamy Parmesan</h3>
+            <p>Price: ₱250.00</p>
+            <button onclick="addToCart('Garlic Mushroom Cooked in Creamy Parmesan', 250)">Add to Cart</button>
+        </div>
+        <img src="d3.jpg" alt="Product Image">
+    </div>
+    <div class="product-item">
+        <div class="product-info">
+            <h3>Savory Sweet Potato Stacks</h3>
+            <p>Price: ₱200.00</p>
+            <button onclick="addToCart('Savory Sweet Potato', 200)">Add to Cart</button>
+        </div>
+        <img src="d4.jpg" alt="Product Image">
+    </div>
+    <div class="product-item">
+        <div class="product-info">
+            <h3>Grilled Corn Salad</h3>
+            <p>Price: ₱200.00</p>
+            <button onclick="addToCart('Grilled Corn Salad', 200)">Add to Cart</button>
+        </div>
+        <img src="d1.jpg" alt="Product Image">
+    </div>
+    <div class="product-item">
+        <div class="product-info">
+            <h3>Garlic Herb Roasted Potatoes Carrots and Zucchini</h3>
+            <p>Price: ₱150.00</p>
+            <button onclick="addToCart('Garlic Herb Roasted Potatoes Carrots and Zucchini', 150)">Add to Cart</button>
+        </div>
+        <img src="d2.jpg" alt="Product Image">
+    </div>
+    <div class="product-item">
+        <div class="product-info">
+            <h3>Special Blueberry Drink</h3>
+            <p>Price: ₱150.00</p>
+            <button onclick="addToCart('Special Blueberry Drink', 150)">Add to Cart</button>
+        </div>
+        <img src="f3.jpg" alt="Product Image">
+    </div>
+    <div class="product-item">
+        <div class="product-info">
+            <h3>Fresh Fruit Watermelon Shake</h3>
+            <p>Price: ₱150.00</p>
+            <button onclick="addToCart('Fresh Fruit Watermelon Shake', 150)">Add to Cart</button>
+        </div>
+        <img src="f1.jpg" alt="Product Image">
+    </div>
+    <div class="product-item">
+        <div class="product-info">
+            <h3>Caramel Bourbon Vanilla Cupcake</h3>
+            <p>Price: ₱100.00</p>
+            <button onclick="addToCart('Caramel Bourbon Vanilla Cupcake', 100)">Add to Cart</button>
+        </div>
+        <img src="f2.jpg" alt="Product Image">
+    </div>
+    <div class="product-item">
+        <div class="product-info">
+            <h3>Fluppy Japanese Souffle Pancake</h3>
+            <p>Price: ₱150.00</p>
+            <button onclick="addToCart('Fluppy Japanese Souffle Pancake', 150)">Add to Cart</button>
+        </div>
+        <img src="m4.jpg" alt="Product Image">
+    </div>
+    <div class="product-item">
+        <div class="product-info">
+            <h3>Rainbow Fluppy Pancake</h3>
+            <p>Price: ₱150.00</p>
+            <button onclick="addToCart('Rainbow Fluppy Pancake', 150)">Add to Cart</button>
+        </div>
+        <img src="m1.jpg" alt="Product Image">
+    </div>
+    <div class="product-item">
+        <div class="product-info">
+            <h3>Mixed Berry Tart</h3>
+            <p>Price: ₱150.00</p>
+            <button onclick="addToCart('Mixed Berry Tart', 150)">Add to Cart</button>
+        </div>
+        <img src="m2.jpg" alt="Product Image">
+    </div>
+    <div class="product-item">
+        <div class="product-info">
+            <h3>Sweet Hand Made Cupcake</h3>
+            <p>Price: ₱150.00</p>
+            <button onclick="addToCart('Sweet Hand Made Cupcake', 150)">Add to Cart</button>
+        </div>
+        <img src="m3.jpg" alt="Product Image">
+    </div>
+        <!-- Add more product items here -->
+    </div>
+    
+    <div class="icon-container">
+        <i class="fas fa-shopping-cart icon cart-icon" onclick="toggleView('cart')"></i>
+        <i class="fas fa-receipt icon receipt-icon" onclick="toggleView('receipt')"></i>
+    </div>
+
+    <div id="order-list" class="cart">
+        <h2>Order List <i class="fas fa-arrow-left back-button" onclick="backToMenu()"></i></h2>
+        <ul id="order-items"></ul>
+        <div>
+            <button onclick="clearOrderList()"><i class="fas fa-trash-alt"></i> Clear Order</button>
+            <i class="fas fa-receipt icon" onclick="toggleView('receipt')"></i>
+        </div>
+    </div>
+
+    <div class="receipt" id="receipt">
+        <h2>Receipt <i class="fas fa-arrow-left back-button" onclick="backToCart()"></i></h2>
+        <div id="receipt-items"></div>
+        <p>Total: ₱<span id="receipt-total-price">0.00</span></p>
+        <button onclick="confirmCheckout()">Confirm Checkout</button>
+    </div>
+
+</div>
+
+<script>
+let cartItems = [];
+
+function addToCart(productName, price) {
+    cartItems.push({ name: productName, price: price });
+    updateCart();
+}
+
+function updateCart() {
+    const orderList = document.getElementById("order-items");
+    orderList.innerHTML = "";
+    cartItems.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - ₱${item.price.toFixed(2)}`;
+        orderList.appendChild(li);
+    });
+}
+
+function toggleView(viewId) {
+    const cartView = document.getElementById("order-list");
+    const receiptView = document.getElementById("receipt");
+
+    if (viewId === "cart") {
+        cartView.style.display = "block";
+        receiptView.style.display = "none";
+    } else if (viewId === "receipt") {
+        cartView.style.display = "none";
+        receiptView.style.display = "block";
+        updateReceipt();
+    }
+}
+
+function updateReceipt() {
+    const receiptItems = document.getElementById("receipt-items");
+    receiptItems.innerHTML = "";
+    cartItems.forEach(item => {
+        const div = document.createElement("div");
+        div.textContent = `${item.name} - ₱${item.price.toFixed(2)}`;
+        receiptItems.appendChild(div);
+    });
+
+    const totalPrice = document.getElementById("receipt-total-price");
+    const total = cartItems.reduce((acc, item) => acc + item.price, 0);
+    totalPrice.textContent = total.toFixed(2);
+}
+
+function clearOrderList() {
+    cartItems = [];
+    updateCart();
+    updateReceipt();
+}
+
+function confirmCheckout() {
+    alert("Checkout confirmed!");
+}
+
+function backToMenu() {
+    const cartView = document.getElementById("order-list");
+    cartView.style.display = "none";
+}
+
+function backToCart() {
+    const receiptView = document.getElementById("receipt");
+    receiptView.style.display = "none";
+}
+
+</script>
+</body>
+</html>

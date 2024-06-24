@@ -1,0 +1,107 @@
+table {
+table-layout: fixed;
+width: 100%;
+border-collapse: collapse;
+border: 2px solid #6c2b2b;
+text-align: center;
+}
+
+.info {
+	color: #6c2b2b;
+	font-family: "Arial";
+}
+
+.PersonalInfo {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	border: 2px solid #6c2b2b;
+	text-align: left;
+}
+
+.Table_Summary {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	border: 2px solid #6c2b2b;
+	text-align: left;
+	margin-right: 20px;
+	background-color: #fdeca6;
+	font-weight: bold;
+
+}
+.form_heading {
+	text-align: center;
+	font-family: "Arial";
+	font-size: 110%;
+	color: #6c2b2b;
+}
+.form_heading h3{
+	color: maroon;
+	margin: 0;
+	padding: 0;
+}
+
+#call {
+	text-align: center;
+	font-family: "Arial";
+	font-size: 110%;
+	color: black;
+}
+
+.red {
+	background-color: maroon;
+	color: white;
+	}
+#leftLogo {
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+
+#rightLogo {
+            float: right;
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+			 }
+.rules {
+    float: right;
+	
+}
+
+.payment-table {
+    font-size: 10px;
+    border-collapse: collapse;
+}
+
+.payment-table th {
+    font-size: 14px;
+    color: maroon;
+    padding: 0px;
+}
+
+body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            margin: 20px;
+			color: black;
+			
+        }
+        .policy-table {
+			float: right;
+            width: 50%;
+            border-collapse: collapse;
+        }
+        .policy-table th, .policy-table td {
+			font-size: 12.3px;
+			 font-weight: bold;
+            border: 1px solid #333;
+            padding: 1.0px;
+            text-align: right-side;
+        }
+        .policy-table th {
+            background-color: White;
+			
+        }

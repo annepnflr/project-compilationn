@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sari-Sari Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgb(253, 196, 255);
+            color: #000000;
+            text-align: center;
+            padding: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+        .container {
+            margin-bottom: 30px;
+            background-color: #ffd0fd;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #000000;
+        }
+        .item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .item img {
+            width: 300px; /* Adjust the width as needed */
+            height: 200px; /* Maintain aspect ratio */
+            margin-right: 10px; /* Add some space between image and text */
+        }
+        .item button {
+            padding: 5px 10px;
+            background-color: #ffeffa;
+            border: none;
+            color: #000000;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .item button:hover {
+            background-color: #ff83d8;
+        }
+        .receipt {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #000000;
+            border-radius: 4px;
+        }
+        .add-to-cart {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+      
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="logoo.jpg" alt="Sari-Sari Store Logo" width="1000" height="500">
+            <h1>Elizabeth's Boutique</h1>
+        </div>
+
+            
+    </header>
+    <main>
+        <div class="container">
+            <div class="container">
+                <h2>Jeans</h2>
+                <div class="item" id="Tokong Wide">
+                    <h3>Tokong Wide</h3> 
+                    <img src="1.jpg" alt="Tokong Wide">
+                    <span>₱450.00</span>
+                    <span>Stock: <span id="stock-Tokong Wide">100</span></span>
+                    <button onclick="deductItem('Tokong Wide')">-</button>
+                    <span id="qty-Tokong Wide">0</span>
+                    <button onclick="addItem('Tokong Wide')">+</button>
+                    <button onclick="addToCart('Tokong Wide')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Tokong Wide')">Restock</button>
+                </div>
+                <div class="item" id=" Anne Baggy Pants ">
+                    <h3>Anne Baggy Pants</h3> 
+                    <img src="2.jpg" alt="Anne Baggy Pants">
+                    <span>₱500.00</span>
+                    <span>Stock: <span id="stock-Anne Baggy Pants">150</span></span>
+                    <button onclick="deductItem('Anne Baggy Pants')">-</button>
+                    <span id="qty-Anne Baggy Pants">0</span>
+                    <button onclick="addItem('Anne Baggy Pants')">+</button>
+                    <button onclick="addToCart('Anne Baggy Pants')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Anne Baggy Pants')">Restock</button>
+                </div>
+                <div class="item" id="High waist Baggy">
+                    <h3>High waist Baggy</h3> 
+                    <img src="3.jpg" alt="High waist Baggy">
+                    <span>₱450.00</span>
+                    <span>Stock: <span id="stock-High waist Baggy">70</span></span>
+                    <button onclick="deductItem('High waist Baggy')">-</button>
+                    <span id="qty-High waist Baggy">0</span>
+                    <button onclick="addItem('High waist Baggy')">+</button>
+                    <button onclick="addToCart('High waist Baggy')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('High waist Baggy')">Restock</button>
+                </div>
+                <div class="item" id="Ripped Light Color Jeans">
+                    <h3>Ripped Light Color Jeans</h3>
+                    <img src="4.jpg" alt="Ripped Light Color Jeans">
+                    <span>₱300.00</span>
+                    <span>Stock: <span id="stock-Ripped Light Color Jeans">20</span></span>
+                    <button onclick="deductItem('Ripped Light Color Jeans')">-</button>
+                    <span id="qty-Ripped Light Color Jeans">0</span>
+                    <button onclick="addItem('Ripped Light Color Jeans')">+</button>
+                    <button onclick="addToCart('Ripped Light Color Jeans')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Ripped Light Color Jeans')">Restock</button>
+                </div>
+                <div class="item" id="Unisex R1 Jeans">
+                    <h3>Unisex R1 Jeans</h3> 
+                    <img src="5.jpg" alt="Unisex R1 Jeans">
+                    <span>₱350.00</span>
+                    <span>Stock: <span id="stock-Unisex R1 Jeans">200</span></span>
+                    <button onclick="deductItem('Unisex R1 Jeans')">-</button>
+                    <span id="qty-Unisex R1 Jeans">0</span>
+                    <button onclick="addItem('Unisex R1 Jeans')">+</button>
+                    <button onclick="addToCart('Unisex R1 Jeans')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Unisex R1 Jeans')">Restock</button>
+                </div>
+                <!-- Add more items in this category here -->
+            </div>
+            
+            <div class="container">
+                <h2>T-Shirt</h2>
+                <div class="item" id="Black Grid">
+                    <h3>Black Grid</h3> 
+                    <img src="T1.jpg" alt="Black Grid">
+                    <span>₱250.00</span>
+                    <span>Stock: <span id="stock-Black Grid">15</span></span>
+                    <button onclick="deductItem('Black Grid')">-</button>
+                    <span id="qty-Black Grid">0</span>
+                    <button onclick="addItem('Black Grid')">+</button>
+                    <button onclick="addToCart('Black Grid')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Black Grid')">Restock</button>
+                </div>
+                <div class="item" id="Oversize Shirt">
+                    <h3>Oversize Shirt</h3> 
+                    <img src="T2.jpg" alt="Oversize Shirt">
+                    <span>₱250.00</span>
+                    <span>Stock: <span id="stock-Oversize Shirt">15</span></span>
+                    <button onclick="deductItem('Oversize Shirt')">-</button>
+                    <span id="qty-Oversize Shirt">0</span>
+                    <button onclick="addItem('Oversize Shirt')">+</button>
+                    <button onclick="addToCart('Oversize Shirt')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Oversize Shirt')">Restock</button>
+                </div>
+                <div class="item" id="Blue Shirt">
+                    <h3>Blue Shirt</h3> 
+                    <img src="T3.jpg" alt="Blue Shirt">
+                    <span>₱150.00</span>
+                    <span>Stock: <span id="stock-Blue Shirt">15</span></span>
+                    <button onclick="deductItem('Blue Shirt')">-</button>
+                    <span id="qty-Blue Shirt">0</span>
+                    <button onclick="addItem('Blue Shirt')">+</button>
+                    <button onclick="addToCart('Blue Shirt')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Blue Shirt')">Restock</button>
+                </div>
+                <div class="item" id="White Zigzag">
+                    <h3>White Zigzag</h3> 
+                    <img src="T4.jpg" alt="White Zigzag">
+                    <span>₱250.00</span>
+                    <span>Stock: <span id="stock-White Zigzag">15</span></span>
+                    <button onclick="deductItem('White Zigzag')">-</button>
+                    <span id="qty-White Zigzag">0</span>
+                    <button onclick="addItem('White Zigzag')">+</button>
+                    <button onclick="addToCart('White Zigzag')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('White Zigzag')">Restock</button>
+                </div>
+                <div class="item" id="Black & White">
+                    <h3>Black & White</h3> 
+                    <img src="T5.jpg" alt="Black & White">
+                    <span>₱250.00</span>
+                    <span>Stock: <span id="stock-Black & White">15</span></span>
+                    <button onclick="deductItem('Black & White')">-</button>
+                    <span id="qty-Black & White">0</span>
+                    <button onclick="addItem('Black & White')">+</button>
+                    <button onclick="addToCart('Black & White')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Black & White')">Restock</button>
+                </div>
+                <!-- Add more items in this category here -->
+            </div>
+            
+            <div class="container">
+                <h2>Perfume</h2>
+                <div class="item" id="Cherry Blossom">
+                    <h3>Cherry Blossom</h3> 
+                    <img src="P1.jpg" alt="Cherry Blossom">
+                    <span>₱100.00</span>
+                    <span>Stock: <span id="stock-Cherry Blossom">45</span></span>
+                    <button onclick="deductItem('Cherry Blossom')">-</button>
+                    <span id="qty-Cherry Blossom">0</span>
+                    <button onclick="addItem('Cherry Blossom')">+</button>
+                    <button onclick="addToCart('Cherry Blossom')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Cherry Blossom')">Restock</button>
+                </div>
+                <div class="item" id="Gingnam Blue">
+                    <h3>Gingnam Blue</h3> 
+                    <img src="P2.jpg" alt="Gingnam Blue">
+                    <span>₱500.00</span>
+                    <span>Stock: <span id="stock-Gingnam Blue">50</span></span>
+                    <button onclick="deductItem('Black Grind')">-</button>
+                    <span id="qty-Gingnam Blue">0</span>
+                    <button onclick="addItem('Gingnam Blue')">+</button>
+                    <button onclick="addToCart('Gingnam Blue')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Gingnam Blue')">Restock</button>
+                </div>
+                <div class="item" id="Cream Cloud">
+                    <h3>Cream Cloud</h3> 
+                    <img src="P3.jpg" alt="Cream Cloud">
+                    <span>₱250.00</span>
+                    <span>Stock: <span id="stock-Cream Cloud">15</span></span>
+                    <button onclick="deductItem('Cream Cloud')">-</button>
+                    <span id="qty-Cream Cloud">0</span>
+                    <button onclick="addItem('Cream Cloud')">+</button>
+                    <button onclick="addToCart('Cream Cloud')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Cream Cloud')">Restock</button>
+                </div>
+                <div class="item" id="Vanilla">
+                    <h3>Vanilla</h3> 
+                    <img src="P4.jpg" alt="Vanilla">
+                    <span>₱450.00</span>
+                    <span>Stock: <span id="stock-Vanilla">15</span></span>
+                    <button onclick="deductItem('Vanilla')">-</button>
+                    <span id="qty-Vanilla">0</span>
+                    <button onclick="addItem('Vanilla')">+</button>
+                    <button onclick="addToCart('Vanilla')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Vanilla')">Restock</button>
+                </div>
+                <div class="item" id="Omnia Amethyst">
+                    <h3>Omnia Amethyst</h3> 
+                    <img src="P5.jpg" alt="Omnia Amethyst">
+                    <span>₱500.00</span>
+                    <span>Stock: <span id="stock-Omnia Amethyst">15</span></span>
+                    <button onclick="deductItem('Omnia Amethyst')">-</button>
+                    <span id="qty-Omnia Amethyst">0</span>
+                    <button onclick="addItem('Omnia Amethyst')">+</button>
+                    <button onclick="addToCart('Omnia Amethyst')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Omnia Amethyst')">Restock</button>
+                </div>
+                <!-- Add more items in this category here -->
+            </div>
+    
+            <div class="container">
+                <h2>Sando</h2>
+                <div class="item" id="Brown Sando">
+                    <h3>Brown Sando</h3> 
+                    <img src="S1.jpg" alt="Brown Sando">
+                    <span>₱150.00</span>
+                    <span>Stock: <span id="stock-Brown Sando">15</span></span>
+                    <button onclick="deductItem('Brown Sando')">-</button>
+                    <span id="qty-Brown Sando">0</span>
+                    <button onclick="addItem('Brown Sando')">+</button>
+                    <button onclick="addToCart('Brown Sando')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Brown Sando')">Restock</button>
+                </div>
+                <div class="item" id="White Croptop">
+                    <h3>White Croptop</h3> 
+                    <img src="S2.jpg" alt="White Croptop">
+                    <span>₱100.00</span>
+                    <span>Stock: <span id="stock-White Croptop">15</span></span>
+                    <button onclick="deductItem('White Croptop')">-</button>
+                    <span id="qty-White Croptop">0</span>
+                    <button onclick="addItem('White Croptop')">+</button>
+                    <button onclick="addToCart('White Croptop')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('White Croptop')">Restock</button>
+                </div>
+                <div class="item" id="Green Sando">
+                    <h3>Green Sando</h3> 
+                    <img src="S3.jpg" alt="Green Sando">
+                    <span>₱180.00</span>
+                    <span>Stock: <span id="stock-Green Sando">15</span></span>
+                    <button onclick="deductItem('Green Sando')">-</button>
+                    <span id="qty-Green Sando">0</span>
+                    <button onclick="addItem('Green Sando')">+</button>
+                    <button onclick="addToCart('Green Sando')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Green Sando')">Restock</button>
+                </div>
+                <div class="item" id="Plain Black">
+                    <h3>Plain Black</h3> 
+                    <img src="S4.jpg" alt="Plain Black">
+                    <span>₱120.00</span>
+                    <span>Stock: <span id="stock-Plain Black">15</span></span>
+                    <button onclick="deductItem('Plain Black')">-</button>
+                    <span id="qty-Plain Black">0</span>
+                    <button onclick="addItem('Plain Black')">+</button>
+                    <button onclick="addToCart('Plain Black')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Plain Black')">Restock</button>
+                </div>
+                <div class="item" id="Croptop Daisy">
+                    <h3>Croptop Daisy</h3> 
+                    <img src="S5.jpg" alt="Croptop Daisy">
+                    <span>₱200.00</span>
+                    <span>Stock: <span id="stock-Croptop Daisy">15</span></span>
+                    <button onclick="deductItem('Croptop Daisy')">-</button>
+                    <span id="qty-Croptop Daisy">0</span>
+                    <button onclick="addItem('Croptop Daisy')">+</button>
+                    <button onclick="addToCart('Croptop Daisy')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Croptop Daisy')">Restock</button>
+                </div>
+                <!-- Add more items in this category here -->
+            </div>
+            
+            <div class="container">
+                <h2>Toys</h2>
+                <div class="item" id="PS5">
+                    <h3>PS5 </h3> 
+                    <img src="L1.jpg" alt="PS5">
+                    <span>₱35,000.00</span>
+                    <span>Stock: <span id="stock-PS5">15</span></span>
+                    <button onclick="deductItem('PS5')">-</button>
+                    <span id="qty-PS5">0</span>
+                    <button onclick="addItem('PS5')">+</button>
+                    <button onclick="addToCart('PS5')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('PS5')">Restock</button>
+                </div>
+                <div class="item" id="Nintendo Switch">
+                    <h3>Nintendo Switch</h3> 
+                    <img src="L2.jpg" alt="Nintendo Switch">
+                    <span>₱15,000.00</span>
+                    <span>Stock: <span id="stock-Nintendo Switch">10</span></span>
+                    <button onclick="deductItem('Nintendo Switch')">-</button>
+                    <span id="qty-Nintendo Switch">0</span>
+                    <button onclick="addItem('Nintendo Switch')">+</button>
+                    <button onclick="addToCart('Nintendo Switch')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Nintendo Switch')">Restock</button>
+                </div>
+                <div class="item" id="Hot Wheels">
+                    <h3>Hot Wheels</h3> 
+                    <img src="L3.jpg" alt="Hot Wheels">
+                    <span>₱120.00</span>
+                    <span>Stock: <span id="stock-Hot Wheels">150</span></span>
+                    <button onclick="deductItem('Hot Wheels')">-</button>
+                    <span id="qty-Hot Wheels">0</span>
+                    <button onclick="addItem('Hot Wheels')">+</button>
+                    <button onclick="addToCart('Hot Wheels')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Hot Wheels')">Restock</button>
+                </div>
+                <div class="item" id="RC Truck">
+                    <h3>RC Truck</h3> 
+                    <img src="L4.jpg" alt="Black Grind">
+                    <span>₱500.00</span>
+                    <span>Stock: <span id="stock-RC Truck">35</span></span>
+                    <button onclick="deductItem('RC Truck')">-</button>
+                    <span id="qty-RC Truck">0</span>
+                    <button onclick="addItem('RC Truck')">+</button>
+                    <button onclick="addToCart('RC Truck')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('RC Truck')">Restock</button>
+                </div>
+                <div class="item" id="Barbie Set">
+                    <h3>Barbie Set</h3> 
+                    <img src="L5.jpg" alt="Barbie Set">
+                    <span>₱350.00</span>
+                    <span>Stock: <span id="stock-Barbie Set">70</span></span>
+                    <button onclick="deductItem('Barbie Set')">-</button>
+                    <span id="qty-Barbie Set">0</span>
+                    <button onclick="addItem('Barbie Set')">+</button>
+                    <button onclick="addToCart('Barbie Set')" class="add-to-cart">Add to Cart</button>
+                    <button onclick="restockItem('Barbie Set')">Restock</button>
+                </div>
+            <!-- Add more items in this category here -->
+        </div>
+        <div class="container" id="cartContainer">
+            <h2>Cart Items</h2>
+            <div id="cartItems"></div>
+            <button onclick="clearCartItems()">Clear All Items</button>
+        </div>
+        <div class="container">
+            <h2>Customer Type</h2>
+            <select id="customerType">
+                <option value="regular">Regular</option>
+                <option value="senior">Senior Citizen</option>
+                <option value="pwd">PWD</option>
+                <option value="student">Student</option>
+            </select>
+        </div>
+        <div class="receipt">
+            <h2>Receipt</h2>
+            <div id="receiptItems"></div>
+            <div id="totalAmount"></div>
+            <button onclick="generateReceipt()">Generate Receipt</button>
+        </div>
+        
+    </main>
+    <script>
+        function clearCartItems() {
+            // Select the cart items container
+            var cartItemsContainer = document.getElementById('cartItems');
+            // Remove all children of the cart items container
+            while (cartItemsContainer.firstChild) {
+                cartItemsContainer.removeChild(cartItemsContainer.firstChild);
+            }
+        }
+    function deductItem(itemId) {
+            var qtyElement = document.getElementById("qty-" + itemId);
+            var currentQty = parseInt(qtyElement.innerText);
+            if (currentQty > 0) {
+                qtyElement.innerText = currentQty - 1;
+                // Update available stock
+                var stockElement = document.getElementById("stock-" + itemId);
+                stockElement.innerText = parseInt(stockElement.innerText) + 1;
+            }
+        }
+
+        function addItem(itemId) {
+            var qtyElement = document.getElementById("qty-" + itemId);
+            var currentQty = parseInt(qtyElement.innerText);
+            qtyElement.innerText = currentQty + 1;
+            // Update available stock
+            var stockElement = document.getElementById("stock-" + itemId);
+            stockElement.innerText = parseInt(stockElement.innerText) - 1;
+        }
+
+        function addToCart(itemId) {
+            var qtyElement = document.getElementById("qty-" + itemId);
+            var currentQty = parseInt(qtyElement.innerText);
+            if (currentQty > 0) {
+                var cartItem = document.createElement("div");
+                cartItem.innerText = itemId + " x " + currentQty;
+                document.getElementById("cartItems").appendChild(cartItem);
+
+                var stockElement = document.getElementById("stock-" + itemId);
+                var stockQty = parseInt(stockElement.innerText);
+                stockElement.innerText = stockQty - currentQty;
+            }
+        }
+        function restockItem(itemId) {
+            var stockElement = document.getElementById("stock-" + itemId);
+            var currentStock = parseInt(stockElement.innerText);
+            var restockedQuantity = prompt("Enter quantity to restock for " + itemId + ":");
+            if (restockedQuantity !== null && !isNaN(parseInt(restockedQuantity))) {
+                var newStock = currentStock + parseInt(restockedQuantity);
+                stockElement.innerText = newStock;
+                } else {
+                alert("Invalid quantity. Please enter a valid number.");
+    }
+}
+function generateReceipt() {
+    var cartItems = document.getElementById("cartItems").childNodes;
+    var receiptItems = document.getElementById("receiptItems");
+    var totalAmount = 0;
+
+    // Clear previous receipt
+    receiptItems.innerHTML = "";
+
+    // Get selected customer type
+    var customerType = document.getElementById("customerType").value;
+
+    // Generate receipt items
+    cartItems.forEach(function (item) {
+        var itemName = item.innerText.split(" x ")[0];
+        var itemQty = parseInt(item.innerText.split(" x ")[1]);
+        var itemPrice = getItemPrice(itemName);
+        var itemTotal = itemQty * itemPrice;
+
+        // Initialize discount variables
+        var discountPercentage = 0;
+        var discountAmount = 0;
+        var discountText = "";
+
+        // Apply discounts if applicable
+        if (customerType === "senior") {
+            discountPercentage = 0.20; // 20% discount for seniors
+            discountText = "(Senior Discount 20%)";
+        } else if (customerType === "pwd") {
+            discountPercentage = 0.30; // 30% discount for PWDs
+            discountText = "(PWD Discount 30%)";
+        } else if (customerType === "student") {
+            discountPercentage = 0.10; // 10% discount for students
+            discountText = "(Student Discount 10%)";
+        }
+
+        // Calculate discount amount and apply it
+        discountAmount = itemPrice * discountPercentage;
+        var discountedPrice = itemPrice - discountAmount;
+        var discountedTotal = itemQty * discountedPrice;
+
+        // Display item details with discount information and total before discount
+        var receiptItem = document.createElement("div");
+        receiptItem.innerText = itemName + " x " + itemQty + " = ₱" + discountedTotal.toFixed(2) + " " + discountText + " (Discount: ₱" + (discountAmount * itemQty).toFixed(2) + ") Total Before Discount: ₱" + itemTotal.toFixed(2);
+        receiptItems.appendChild(receiptItem);
+
+        // Update total amount
+        totalAmount += discountedTotal;
+    });
+
+    // Ask for payment and calculate change
+    var payment = prompt("Enter payment amount:");
+    if (payment !== null && !isNaN(parseFloat(payment))) {
+        var paymentAmount = parseFloat(payment);
+        var change = paymentAmount - totalAmount;
+
+
+        // Display total amount
+        var totalAmountElement = document.createElement("div");
+        totalAmountElement.innerText = "Total Amount: ₱" + totalAmount.toFixed(2);
+        receiptItems.appendChild(totalAmountElement);
+
+        // Display payment amount
+        var paymentAmountElement = document.createElement("div");
+        paymentAmountElement.innerText = "Cash: ₱" + paymentAmount.toFixed(2);
+        receiptItems.appendChild(paymentAmountElement);
+
+        // Display change or alert for insufficient payment
+        if (change >= 0) {
+            var changeElement = document.createElement("div");
+            changeElement.innerText = "Change: ₱" + change.toFixed(2);
+            receiptItems.appendChild(changeElement);
+            alert("Payment successful! Change: ₱" + change.toFixed(2));
+        } else {
+            alert("Insufficient payment. Please provide the exact amount or more.");
+        }
+    } else {
+        alert("Invalid payment amount. Please enter a valid number.");
+    }
+}
+
+
+
+
+function getItemPrice(itemName) {
+    // Define item prices here
+    var itemPrices = {
+        "Tokong Wide": 450.00,
+        "Anne Baggy Pants": 500.00,
+        "High waist Baggy": 450.00,
+        "Ripped Light Color Jeans": 300.00,
+        "Unisex R1 Jeans": 350.00,
+        "Black Grid": 250.00,
+        "Oversize Shirt": 250.00,
+        "Blue Shirt": 150.00,
+        "White Zigzag": 250.00,
+        "Black & White": 250.00,
+        "Cherry Blossom": 100.00,
+        "Gingnam Blue": 500.00,
+        "Cream Cloud": 250.00,
+        "Vanilla": 450.00,
+        "Omnia Amethyst": 500.00,
+        "Brown Sando": 150.00,
+        "White Croptop": 100.00,
+        "Green Sando": 180.00,
+        "Plain Black": 120.00,
+        "Croptop Daisy": 200.00,
+        "PS5": 35000.00,
+        "Nintendo Switch": 15000.00,
+        "Hot Wheels": 120.00,
+        "RC Truck": 500.00,
+        "Barbie Set": 350.00,
+
+        // Add more items and prices as needed
+    };
+    return itemPrices[itemName];
+}
+
+</script>
+</body>
+</html>

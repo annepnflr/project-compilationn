@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compilation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("bg1.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .title {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: #000;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            margin: 0 auto;
+        }
+        .container-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80%;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border: 10px solid #cda0c1;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            width: 250px;
+            height: 300px;
+            text-align: center;
+            background-color: rgba(255, 161, 221, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .container img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .container p {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .container .stand {
+            position: absolute;
+            bottom: -40px;
+            width: 60px;
+            height: 20px;
+            background-color: #ff0095;
+            border-radius: 0 0 10px 10px;
+            z-index: -1;
+        }
+        .container .base {
+            position: absolute;
+            bottom: -60px;
+            width: 100px;
+            height: 10px;
+            background-color: #ffabee;
+            border-radius: 10px;
+            z-index: -1;
+        }
+        .container .keyboard {
+            position: absolute;
+            bottom: -80px;
+            width: 180px;
+            height: 20px;
+            background-color: #e75eeb;
+            border-radius: 5px;
+            z-index: -2;
+        }
+        .container .mouse {
+            position: absolute;
+            bottom: -80px;
+            left: 200px;
+            width: 20px;
+            height: 30px;
+            background-color: #ff81fb;
+            border-radius: 50% 50% 40% 40%;
+            z-index: -2;
+        }
+        .container a {
+            text-decoration: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #e2e2e2;
+            color: #030202;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        button:hover {
+            background-color: #444;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Welcome to My Webpage</div>
+    <div class="container-wrapper">
+        <div class="container">
+            <img src="logo.jpg" alt="Restaurant Image">
+            <p>Restaurant</p>
+            <a href="Restaurant.html">
+                <button>Click Me!</button>
+            </a>
+            <div class="stand"></div>
+            <div class="base"></div>
+            <div class="keyboard"></div>
+            <div class="mouse"></div>
+        </div>
+        <div class="container">
+            <img src="resume.jpg" alt="Resume Image">
+            <p>Resume</p>
+            <a href="MY RESUME.html">
+                <button>Click Me!</button>
+            </a>
+            <div class="stand"></div>
+            <div class="base"></div>
+            <div class="keyboard"></div>
+            <div class="mouse"></div>
+        </div>
+        <div class="container">
+            <img src="logoo.jpg" alt="Sari-Sari Store Image">
+            <p>Sari-Sari Store</p>
+            <a href="SARI-SARI.html">
+                <button>Click Me!</button>
+            </a>
+            <div class="stand"></div>
+            <div class="base"></div>
+            <div class="keyboard"></div>
+            <div class="mouse"></div>
+        </div>
+        <div class="container">
+            <img src="form.jpg" alt="Registration Form Image">
+            <p>Registration Form</p>
+            <a href="REGITRATION FORM.HTML">
+                <button>Click Me!</button>
+            </a>
+            <div class="stand"></div>
+            <div class="base"></div>
+            <div class="keyboard"></div>
+            <div class="mouse"></div>
+        </div>
+    </div>
+</body>
+</html>
